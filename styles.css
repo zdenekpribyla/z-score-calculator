@@ -1,0 +1,14 @@
+.calc-body {
+    width: 33%;
+    float: left;
+}
+
+.col {
+    width: 40%;
+    float: left;
+    padding: 10px 10px;
+}
+
+.calc-button {
+    padding: 10px;
+}
