@@ -1,22 +1,5 @@
-.calc-body {
-    width: 50%;
-    float: left;
+.display-results {
+    padding: 15px 0px;
 }
 
-.text-intro {
-    width:100%;
-    float: left;
-}
-
-.col {
-    width: 50%;
-    float: left;
-    padding: 10px 0px;
-}
-
-.calc-button {
-    padding: 10px;
-    width: 100%;
-    float: left;
-}
 
