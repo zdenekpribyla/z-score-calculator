@@ -8,6 +8,7 @@ var resultElement = document.getElementById('display-result');
 var patternAlphabetElement = document.getElementById('display-pattern-alphabet');
 var patternValueElement = document.getElementById('display-pattern-value');
 
+
 // take value and accept only numbers
 var getValues = function () {
     console.log('getValues()');
@@ -18,8 +19,8 @@ var getValues = function () {
     }
 };
 
-// validate if only numbers are put
 
+// validate if only numbers are put
 var validate = function (dataToValidate) {
     console.log('validate()');
 
@@ -33,49 +34,48 @@ var validate = function (dataToValidate) {
     }
 };
 
-// calculate
+// calculate function + calculation pattern
 var calculate = function (inputData) {
-   return (inputData.rawScore - inputData.populationMean) / inputData.standardDeviation;
+   return inputData.rawScore - inputData.populationMean / inputData.standardDeviation;
 };
 
 
-// final run
+// final run decides true - calculate() or false - display alert
 var finalRun = function () {
     console.log('finalRun()');
 
     var inputData = getValues();
 
     if (validate(inputData)) {
-        console.log('splnena true - validni cisla');
+        console.log('true - input only positive numbers');
 
         var result = calculate(inputData);
 
+        // display pattern
         patternAlphabetElement.innerHTML = 'Z = (X - μ) / σ';
 
-        // result
-        resultElement.innerHTML = 'Z = ' + result;
-
-        console.log(result);
+        // display input numbers in pattern
         patternValueElement.innerHTML = 'Z = ' + inputData.rawScore + ' - ' + inputData.populationMean
             + ' / ' + inputData.standardDeviation;
+        // display result
+        resultElement.innerHTML = 'Z = ' + result;
     }
 
     else {
-        console.log('splnena false - cisla mensi nez nula');
+        console.log('false - input zero or negative numbers');
         alert('Čísla musí být větší než nula!')
     }
 };
+
 
 // button click
 clickButtonElement.addEventListener('click', function () {
     console.log('kliknul sem na button');
     finalRun()
-    //put here finalRun function - calculate
 });
 
 //hit enter
-
-// vytvori pocitadlo - loop
+// create a loop
 for (var index = 0; index < inputsAllElements.length; ++index) {
 
     var singleInputElements = inputsAllElements[index];
