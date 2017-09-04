@@ -58,7 +58,7 @@ var finalRun = function () {
         patternValueElement.innerHTML = 'Z = ' + inputData.rawScore + ' - ' + inputData.populationMean
             + ' / ' + inputData.standardDeviation;
         // display result
-        resultElement.innerHTML = 'Z = ' + result;
+        resultElement.innerHTML = 'Z = ' + result.toFixed(2);
     }
 
     else {
