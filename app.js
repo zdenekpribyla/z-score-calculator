@@ -52,7 +52,7 @@ var finalRun = function () {
         var result = calculate(inputData);
 
         // display pattern
-        patternAlphabetElement.innerHTML = 'Z = (X - μ) / σ';
+        patternAlphabetElement.innerHTML = 'Z = (x - x̄) / σ';
 
         // display input numbers in pattern
         patternValueElement.innerHTML = 'Z = ' + inputData.rawScore + ' - ' + inputData.populationMean
