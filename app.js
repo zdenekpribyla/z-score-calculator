@@ -36,7 +36,7 @@ var validate = function (dataToValidate) {
 
 // calculate function + calculation pattern
 var calculate = function (inputData) {
-   return inputData.rawScore - inputData.populationMean / inputData.standardDeviation;
+   return (inputData.rawScore - inputData.populationMean) / inputData.standardDeviation;
 };
 
 
@@ -55,8 +55,8 @@ var finalRun = function () {
         patternAlphabetElement.innerHTML = 'Z = (x - x̄) / σ';
 
         // display input numbers in pattern
-        patternValueElement.innerHTML = 'Z = ' + inputData.rawScore + ' - ' + inputData.populationMean
-            + ' / ' + inputData.standardDeviation;
+        patternValueElement.innerHTML = 'Z = (' + inputData.rawScore + ' - ' + inputData.populationMean
+            + ') / ' + inputData.standardDeviation;
         // display result
         resultElement.innerHTML = 'Z = ' + result.toFixed(2);
     }
