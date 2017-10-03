@@ -10,8 +10,8 @@ var patternValueElement = document.getElementById('display-pattern-value');
 
 
 // take value and accept only numbers
-var getValues = function () {
-    console.log('getValues()');
+var getInputValues = function () {
+    console.log('getInputValues()');
     return {
         rawScore: Number(rawScoreElement.value),
         populationMean: Number(populationMeanElement.value),
@@ -34,22 +34,22 @@ var validate = function (dataToValidate) {
     }
 };
 
-// calculate function + calculation pattern
-var calculate = function (inputData) {
+// calculateScore function + calculation pattern
+var calculateScore = function (inputData) {
    return (inputData.rawScore - inputData.populationMean) / inputData.standardDeviation;
 };
 
 
-// final run decides true - calculate() or false - display alert
+// final run decides true - calculateScore() or false - display alert
 var finalRun = function () {
     console.log('finalRun()');
 
-    var inputData = getValues();
+    var inputData = getInputValues();
 
     if (validate(inputData)) {
         console.log('true - input only positive numbers');
 
-        var result = calculate(inputData);
+        var result = calculateScore(inputData);
 
         // display pattern
         patternAlphabetElement.innerHTML = 'Z = (x - x̄) / σ';
